@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular is great</title>
+</head>
+<body ng-app>
+
+<!--<select ng-init="options= ['organiser par ordre', 'organiser par contenu']">-->
+    <!--<option ng-repeat="option in options">{{option}}</option>-->
+<!--</select><br>-->
+
+<input type="text" ng-model="query">
+
+<div ng-controller ="CommentsCtrl">
+    <div ng-repeat="comment in comments | filter :{ content: query }">
+        <p>
+            <strong>
+                {{comment.name}}
+            </strong><br>
+
+            {{comment.content}}
+        </p>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+
+
+    function CommentsCtrl($scope){
+        console.log($scope)
+        $scope.comments =[
+            {
+                "name": "Mayra",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "mayrawhitney@insectus.com",
+                "content": "Id enim eu aute voluptate consectetur sunt do sunt dolor. Proident dolore eiusmod mollit adipisicing nisi magna commodo elit duis id Lorem proident. Elit exercitation eu cupidatat voluptate ad aliquip ex fugiat irure veniam. Eiusmod nostrud excepteur nulla incididunt nisi cillum commodo enim excepteur ipsum duis. Et minim pariatur elit aliquip enim elit incididunt exercitation veniam pariatur proident enim excepteur ullamco."
+            },
+            {
+                "name": "Darcy",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "darcywhitney@insectus.com",
+                "content": "Exercitation aliquip culpa do nulla sit adipisicing duis ad ad fugiat. Consectetur dolor non tempor cupidatat tempor. Excepteur ex fugiat minim nulla ex nostrud pariatur sint aliquip proident cillum qui enim fugiat. Duis ea aliquip consequat commodo dolor ea esse deserunt. In pariatur adipisicing cillum enim occaecat proident enim reprehenderit."
+            },
+            {
+                "name": "Dolly",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "dollywhitney@insectus.com",
+                "content": "Consequat aute et excepteur irure consequat ipsum veniam id commodo. Culpa ad enim laborum irure occaecat excepteur voluptate non nostrud deserunt ea. Nostrud velit enim sunt esse ad id consectetur excepteur est est laboris ullamco laboris. Voluptate exercitation sunt voluptate elit aliquip commodo nostrud minim deserunt mollit ex sit. Pariatur elit labore sunt voluptate excepteur."
+            },
+            {
+                "name": "Saunders",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "saunderswhitney@insectus.com",
+                "content": "Anim qui nisi amet nostrud aliquip laborum sit enim laboris consequat aute aliqua aute ea. Exercitation nisi tempor labore labore fugiat ullamco nulla pariatur in culpa est nisi officia. Ipsum tempor reprehenderit aliqua enim in nulla officia deserunt laboris. Consequat aliquip fugiat dolore occaecat ea sit esse veniam esse nisi amet in proident. Exercitation cillum in ut in eiusmod eiusmod."
+            },
+            {
+                "name": "Karen",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "karenwhitney@insectus.com",
+                "content": "Minim Lorem velit Lorem veniam non minim cupidatat esse dolor consequat et ullamco ex elit. Ea enim nisi magna commodo Lorem excepteur ea officia sit aliquip. Dolor nostrud exercitation irure laborum irure officia occaecat. Minim culpa aute officia aliqua reprehenderit sint. Consequat ullamco sunt aliquip reprehenderit enim magna sint non dolore sint."
+            },
+            {
+                "name": "Toni",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "toniwhitney@insectus.com",
+                "content": "Exercitation ea officia ea qui. Aute reprehenderit nisi aliquip laborum nostrud. Culpa aliquip culpa qui officia ea exercitation dolor proident pariatur non. Id cillum in officia pariatur. Esse sit ea pariatur qui cupidatat cillum aliqua consequat incididunt magna nisi velit aliqua in."
+            },
+            {
+                "name": "Blair",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "blairwhitney@insectus.com",
+                "content": "Excepteur labore esse voluptate cupidatat magna. Voluptate ullamco nulla incididunt veniam pariatur ullamco ut. Laborum elit nisi ut nisi qui voluptate consectetur minim. Pariatur tempor tempor est nostrud. Ex aliquip velit non cupidatat reprehenderit enim consectetur amet voluptate pariatur culpa in reprehenderit."
+            }
+        ];
+
+    }
+
+</script>
+
+</body>
+</html>
