@@ -13,7 +13,7 @@
 </select><br>
 
 <div ng-controller="CommentsCtrl">
-    <div ng-repeat="comment in comments | filter :{ comment: query } | orderBy: order">
+    <div ng-repeat="comment in comments | filter :{ content: query } | orderBy: order">
         <p>
             <strong>
                 {{comment.name}}
