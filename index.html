@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>angular is great</title>
 </head>
 <body ng-app>
 
-<!--<select ng-init="options= ['organiser par ordre', 'organiser par contenu']">-->
-    <!--<option ng-repeat="option in options">{{option}}</option>-->
-<!--</select><br>-->
-
 <input type="text" ng-model="query">
+<select ng-model="order">
+    <option value="name">Organiser par nom</option>
+    <option value="content">Organiser par contenu</option>
+</select><br>
 
-<div ng-controller ="CommentsCtrl">
-    <div ng-repeat="comment in comments | filter :{ content: query }">
+<div ng-controller="CommentsCtrl">
+    <div ng-repeat="comment in comments | filter :{ comment: query } | orderBy: order">
         <p>
             <strong>
                 {{comment.name}}
             </strong><br>
-
             {{comment.content}}
         </p>
     </div>
@@ -28,9 +27,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script>
 
+    var app = angular.module('myApp', []);
+    app.controller('CommentsCtrl', function($scope) {
 
-    function CommentsCtrl($scope){
-        console.log($scope)
         $scope.comments =[
             {
                 "name": "Mayra",
@@ -75,8 +74,10 @@
                 "content": "Excepteur labore esse voluptate cupidatat magna. Voluptate ullamco nulla incididunt veniam pariatur ullamco ut. Laborum elit nisi ut nisi qui voluptate consectetur minim. Pariatur tempor tempor est nostrud. Ex aliquip velit non cupidatat reprehenderit enim consectetur amet voluptate pariatur culpa in reprehenderit."
             }
         ];
+        return $scope.comments;
 
-    }
+    });
+
 
 </script>
 
